@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="mvvm.js"></script>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="s">
+    <h2>s的值:{{s}}</h2>
+    <h2>computed的值:{{hello}}</h2>
+    {{A}}
+    <h1>{{a.a}}</h1>
+    <h1>{{b}}</h1>
+    <h1>{{c}}<h3>{{d}}</h3></h1>
+</div>
+<script>
+    let vue = new Vue({
+        el:'#app',
+        data:{
+            s:1,
+            A:'是A',
+            a:{a:1},
+            b:'是b',
+            c:'是c',
+            d:'是d'
+        },
+        //computed可以缓存 只是把数据挂在vm上
+        computed:{
+          hello(){
+              return this.s+this.c
+          }
+        }
+    })
+</script>
+</body>
+</html>
